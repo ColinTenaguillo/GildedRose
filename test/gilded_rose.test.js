@@ -3,7 +3,8 @@ const {
   Item,
   Cheese,
   Legendary,
-  Backstage
+  Backstage,
+  Conjured,
 } = require("../src/gilded_rose");
 
 describe("Gilded Rose", function () {

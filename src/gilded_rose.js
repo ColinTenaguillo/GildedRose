@@ -1,3 +1,7 @@
+// Would have use static value in Item but
+// not yet supported in current ECMASCRIPT
+const baseDecreaseValue = 1
+
 class Item {
   constructor(name, sellIn, quality){
     this.name = name;
@@ -14,13 +18,13 @@ class Item {
       
       const outdated = 0
       if (this.sellIn <= outdated){
-        this.quality = this.quality - 2
+        this.quality = this.quality - (baseDecreaseValue * 2)
         if (this.quality < 0){
           this.quality = 0
         }
       }
       else {
-        this.quality--
+        this.quality = this.quality - baseDecreaseValue
       }
     }
   }
@@ -50,7 +54,6 @@ class Backstage extends Item {
     const concertEnded = 0
     
     if (this.sellIn <= concertEnded){
-      console.log(this.sellIn)
       this.quality = 0
     }
     else if (this.sellIn <= fiveDays){
@@ -63,7 +66,25 @@ class Backstage extends Item {
 }
 
 class Conjured extends Item {
+  updateQuality() {
+    this.sellIn--
 
+    const minQuality = 0
+    if (this.quality > minQuality){
+      
+      const outdated = 0
+      if (this.sellIn <= outdated){
+        this.quality = this.quality - ((baseDecreaseValue * 2) * 2)
+        if (this.quality < 0){
+          this.quality = 0
+        }
+      }
+      else {
+        this.quality = this.quality - (baseDecreaseValue * 2)
+      }
+    }
+
+  }
 }
 
 class Shop {
