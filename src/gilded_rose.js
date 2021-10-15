@@ -11,7 +11,17 @@ class Item {
 
     const minQuality = 0
     if (this.quality > minQuality){
-      this.quality--
+      
+      const outdated = 0
+      if (this.sellIn <= outdated){
+        this.quality = this.quality - 2
+        if (this.quality < 0){
+          this.quality = 0
+        }
+      }
+      else {
+        this.quality--
+      }
     }
   }
 }
