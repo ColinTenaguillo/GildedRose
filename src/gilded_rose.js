@@ -62,6 +62,10 @@ class Backstage extends Item {
   }
 }
 
+class Conjured extends Item {
+
+}
+
 class Shop {
   constructor(items=[]){
     this.items = items;
@@ -80,5 +84,6 @@ module.exports = {
   Shop,
   Cheese,
   Legendary,
-  Backstage
+  Backstage,
+  Conjured,
 }

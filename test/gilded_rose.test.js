@@ -75,4 +75,18 @@ describe("Gilded Rose", function () {
     expect(items[0].sellIn).toBe(-1);
     expect(items[0].quality).toBe(0);
   })
+
+  it("Conjured should decrease two times faster than normal items", () => {
+    const gilded = new Shop([
+        new Item("NormalItem", 5, 5),
+        new Conjured("ConjuredItem", 5, 5)
+      ])
+    
+    const items = gilded.updateQuality();
+
+    expect(items[0].sellIn).toBe(4);
+    expect(items[0].quality).toBe(4);  
+    expect(items[1].sellIn).toBe(4);
+    expect(items[1].quality).toBe(3);
+  })
 });
