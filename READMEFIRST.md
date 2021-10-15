@@ -1,14 +1,24 @@
-Appliquer les principes de Clean Code sur le Gilded Rose ou le Trivia (au choix)
-○ https://github.com/ChrisHeral/GildedRose-Refactoring-Kata
-○ https://github.com/ChrisHeral/trivia
-Choisir un binôme différent de la semaine dernière
-Choisir un des 2 katas
-Appréhender ce code pour la 1e fois
-Quelle stratégie adopter pour le refactorer sans douleur ?
-Lister les améliorations possibles (fichier texte ou autre)
-Les prioriser par ordre de facilité
-Les traiter dans l’ordre en faisant des micro-commits pour chaque avancée
-Pusher sur un repo Git au plus tard dimanche soir
+# A lire avant tout
+## Résumé des consignes
+<details>
+<summary>Consignes</summary>
+
+- Appliquer les principes de Clean Code sur le Gilded Rose ou le Trivia (au choix)
+
+    - https://github.com/ChrisHeral/GildedRose-Refactoring-Kata
+
+    - https://github.com/ChrisHeral/trivia  
+
+- Choisir un binôme différent de la semaine dernière
+- Choisir un des 2 katas
+- Appréhender ce code pour la 1e fois
+- Quelle stratégie adopter pour le refactorer sans douleur ?
+- Lister les améliorations possibles (fichier texte ou autre)
+- Les prioriser par ordre de facilité
+- Les traiter dans l’ordre en faisant des micro-commits pour chaque avancée
+- Pusher sur un repo Git au plus tard dimanche soir</details>
+
+
 
 ## Choix du Legacy
 Nous avons choisi le repo Gilded Rose, et d'utiliser du JavaScript.
