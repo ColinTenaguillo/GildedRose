@@ -12,19 +12,23 @@ class Item {
 
   updateQuality() {
     this.sellIn--
+    this.decreaseQuality(1)
+  }
 
+  decreaseQuality(factor = 1) {
     const minQuality = 0
     if (this.quality > minQuality){
       
       const outdated = 0
       if (this.sellIn <= outdated){
-        this.quality = this.quality - (baseDecreaseValue * 2)
+        console.log(this.sellIn)
+        this.quality = this.quality - ((baseDecreaseValue * 2) * factor)
         if (this.quality < 0){
           this.quality = 0
         }
       }
       else {
-        this.quality = this.quality - baseDecreaseValue
+        this.quality = this.quality - (baseDecreaseValue * factor)
       }
     }
   }
@@ -68,22 +72,7 @@ class Backstage extends Item {
 class Conjured extends Item {
   updateQuality() {
     this.sellIn--
-
-    const minQuality = 0
-    if (this.quality > minQuality){
-      
-      const outdated = 0
-      if (this.sellIn <= outdated){
-        this.quality = this.quality - ((baseDecreaseValue * 2) * 2)
-        if (this.quality < 0){
-          this.quality = 0
-        }
-      }
-      else {
-        this.quality = this.quality - (baseDecreaseValue * 2)
-      }
-    }
-
+    this.decreaseQuality(2)
   }
 }
 
