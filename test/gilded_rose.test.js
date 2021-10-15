@@ -2,7 +2,8 @@ const {
   Shop,
   Item,
   Cheese,
-  Legendary
+  Legendary,
+  Backstage
 } = require("../src/gilded_rose");
 
 describe("Gilded Rose", function () {
@@ -55,21 +56,21 @@ describe("Gilded Rose", function () {
   })
 
   it("Backstage passes sellIn <= 10 quality increase by two", () => {
-    const gilded = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 8, 20)])
+    const gilded = new Shop([new Backstage("Backstage passes to a TAFKAL80ETC concert", 8, 20)])
     const items = gilded.updateQuality();
     expect(items[0].sellIn).toBe(7);
     expect(items[0].quality).toBe(22);
   })
 
   it("Backstage passes sellIn <= 5 quality increase by three", () => {
-    const gilded = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 4, 20)])
+    const gilded = new Shop([new Backstage("Backstage passes to a TAFKAL80ETC concert", 4, 20)])
     const items = gilded.updateQuality();
     expect(items[0].sellIn).toBe(3);
     expect(items[0].quality).toBe(23);
   })
 
   it("Backstage passes sellIn 0 quality is 0", () => {
-    const gilded = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 0, 20)])
+    const gilded = new Shop([new Backstage("Backstage passes to a TAFKAL80ETC concert", 0, 20)])
     const items = gilded.updateQuality();
     expect(items[0].sellIn).toBe(-1);
     expect(items[0].quality).toBe(0);

@@ -41,6 +41,27 @@ class Legendary extends Item {
   updateQuality(){}
 }
 
+class Backstage extends Item {
+  updateQuality(){
+    this.sellIn--
+
+    const tenDays = 10
+    const fiveDays = 5
+    const concertEnded = 0
+    
+    if (this.sellIn <= concertEnded){
+      console.log(this.sellIn)
+      this.quality = 0
+    }
+    else if (this.sellIn <= fiveDays){
+      this.quality = this.quality + 3
+    } 
+    else if (this.sellIn <= tenDays) {
+      this.quality = this.quality + 2
+    }
+  }
+}
+
 class Shop {
   constructor(items=[]){
     this.items = items;
@@ -58,5 +79,6 @@ module.exports = {
   Item,
   Shop,
   Cheese,
-  Legendary
+  Legendary,
+  Backstage
 }
