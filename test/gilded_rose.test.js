@@ -10,20 +10,6 @@ describe("Gilded Rose", function () {
     expect(items[0].name).toBe("foo");
   });
 
-  it("Aged Brie sellIn 2 & quality 0 should return sellIn 1 & quality 1 ", () => {
-    const gilded = new Shop([new Item("Aged Brie", 2, 0)])
-    const items = gilded.updateQuality();
-    expect(items[0].sellIn).toBe(1);
-    expect(items[0].quality).toBe(1);
-  })
-
-  it("An item can never be more than 50 ", () => {
-    const gilded = new Shop([new Item("Aged Brie", 1, 50)])
-    const items = gilded.updateQuality();
-    expect(items[0].sellIn).toBe(0);
-    expect(items[0].quality).toBe(50);
-  })
-
   it("Normal items should decrease 1 quality & 1 sellIn", () => {
     const gilded = new Shop([new Item("NormalItem", 10, 20)])
     const items = gilded.updateQuality();
@@ -43,6 +29,20 @@ describe("Gilded Rose", function () {
     const items = gilded.updateQuality();
     expect(items[0].sellIn).toBe(-1);
     expect(items[0].quality).toBe(8);
+  })
+
+  it("Aged Brie sellIn 2 & quality 0 should return sellIn 1 & quality 1 ", () => {
+    const gilded = new Shop([new Item("Aged Brie", 2, 0)])
+    const items = gilded.updateQuality();
+    expect(items[0].sellIn).toBe(1);
+    expect(items[0].quality).toBe(1);
+  })
+
+  it("An item can never be more than 50 ", () => {
+    const gilded = new Shop([new Item("Aged Brie", 1, 50)])
+    const items = gilded.updateQuality();
+    expect(items[0].sellIn).toBe(0);
+    expect(items[0].quality).toBe(50);
   })
 
   it("legendaray item never loose quality", () => {
