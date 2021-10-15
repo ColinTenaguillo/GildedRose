@@ -37,6 +37,10 @@ class Cheese extends Item {
   }
 }
 
+class Legendary extends Item {
+  updateQuality(){}
+}
+
 class Shop {
   constructor(items=[]){
     this.items = items;
@@ -53,5 +57,6 @@ class Shop {
 module.exports = {
   Item,
   Shop,
-  Cheese
+  Cheese,
+  Legendary
 }

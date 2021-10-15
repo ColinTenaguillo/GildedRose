@@ -1,7 +1,8 @@
 const {
   Shop,
   Item,
-  Cheese
+  Cheese,
+  Legendary
 } = require("../src/gilded_rose");
 
 describe("Gilded Rose", function () {
@@ -47,7 +48,7 @@ describe("Gilded Rose", function () {
   })
 
   it("legendaray item never loose quality", () => {
-    const gilded = new Shop([new Item("Sulfuras, Hand of Ragnaros", 0, 80)])
+    const gilded = new Shop([new Legendary("Sulfuras, Hand of Ragnaros", 0, 80)])
     const items = gilded.updateQuality();
     expect(items[0].sellIn).toBe(0);
     expect(items[0].quality).toBe(80);
