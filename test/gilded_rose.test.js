@@ -1,6 +1,7 @@
 const {
   Shop,
-  Item
+  Item,
+  Cheese
 } = require("../src/gilded_rose");
 
 describe("Gilded Rose", function () {
@@ -32,14 +33,14 @@ describe("Gilded Rose", function () {
   })
 
   it("Aged Brie sellIn 2 & quality 0 should return sellIn 1 & quality 1 ", () => {
-    const gilded = new Shop([new Item("Aged Brie", 2, 0)])
+    const gilded = new Shop([new Cheese("Aged Brie", 2, 0)])
     const items = gilded.updateQuality();
     expect(items[0].sellIn).toBe(1);
     expect(items[0].quality).toBe(1);
   })
 
   it("An item can never be more than 50 ", () => {
-    const gilded = new Shop([new Item("Aged Brie", 1, 50)])
+    const gilded = new Shop([new Cheese("Aged Brie", 1, 50)])
     const items = gilded.updateQuality();
     expect(items[0].sellIn).toBe(0);
     expect(items[0].quality).toBe(50);

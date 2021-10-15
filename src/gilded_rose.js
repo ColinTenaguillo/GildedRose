@@ -26,6 +26,17 @@ class Item {
   }
 }
 
+class Cheese extends Item {
+  updateQuality(){
+    this.sellIn--
+
+    const maxQuality = 50
+    if (this.quality < maxQuality){
+      this.quality++
+    }
+  }
+}
+
 class Shop {
   constructor(items=[]){
     this.items = items;
@@ -41,5 +52,6 @@ class Shop {
 
 module.exports = {
   Item,
-  Shop
+  Shop,
+  Cheese
 }
